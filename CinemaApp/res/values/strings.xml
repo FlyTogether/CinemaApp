@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	
+    <!-- app overall -->
+    <string name="app_name">CinemaApp</string>
+    <string name="app_slogan">一起去看电影</string>
+    <string name="app_slogan2">享受你我的休闲时光</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <!--  -->
+    
+</resources>

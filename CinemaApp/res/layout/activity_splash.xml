@@ -1,0 +1,65 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#0099cc"
+    tools:context="com.cpp2.FullscreenActivity" >
+
+    <!--
+         The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc.
+    -->
+
+	<ImageView 
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:src="@drawable/splash_background"/>
+	
+	<LinearLayout 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center_horizontal"
+	    android:gravity="center_horizontal"
+	    android:orientation="vertical"
+	    >
+	    
+	    <ImageView 
+	        android:src="@drawable/ic_launcher"
+	        android:layout_width="80dip"
+     	 	android:layout_height="80dip"
+    	    android:layout_marginTop="60dip"
+    	    android:layout_marginBottom="20dip"
+     	  	android:scaleType="fitXY"
+	        />
+	    <TextView
+	        android:id="@+id/fullscreen_content"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:gravity="center_horizontal"
+	        android:keepScreenOn="true"
+	        android:text="@string/app_slogan"
+	        android:textColor="#fff"
+	        android:textSize="40sp"
+	        android:textStyle="bold"
+	        android:shadowColor="#000"
+	        android:shadowDx="0"
+	        android:shadowDy="2"
+	        android:shadowRadius="1" />
+	    <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/app_slogan2"
+	        android:textSize="20sp"
+	        android:layout_marginTop="20dip"/>
+	    
+	</LinearLayout>
+	
+	
+    <!--
+         This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows.
+    -->
+
+
+</FrameLayout>
