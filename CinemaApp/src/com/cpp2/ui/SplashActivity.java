@@ -32,12 +32,12 @@ public class SplashActivity extends BaseActivity{
 				@Override
 				public void run() {
 					Intent intent = new Intent();
-//					intent.setClass(SplashActivity.this, MainTabActivity.class);
+					intent.setClass(SplashActivity.this, MainTabActivity.class);
 					startActivity(intent);
 					finish();
 					super.run();
 				}
-			}, 2000);
+			}, 500);
 			
 		}
 		else{
@@ -59,9 +59,9 @@ public class SplashActivity extends BaseActivity{
 	
 	private void showSetNetworkDialog() {
 		AlertDialog.Builder builder = new Builder(this);
-		builder.setTitle("ÉèÖÃÍøÂç");
-		builder.setMessage("ÍøÂç´íÎóÇë¼ì²éÍøÂç×´Ì¬");
-		builder.setPositiveButton("ÉèÖÃÍøÂç", new OnClickListener() {
+		builder.setTitle("è®¾ç½®ç½‘ç»œ");
+		builder.setMessage("ç½‘ç»œé”™è¯¯è¯·æ£€æŸ¥ç½‘ç»œçŠ¶æ€");
+		builder.setPositiveButton("è®¾ç½®ç½‘ç»œ", new OnClickListener() {
 			
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -69,7 +69,7 @@ public class SplashActivity extends BaseActivity{
 				startActivity(intent);
 			}
 		});
-		builder.setNegativeButton("È¡Ïû", new OnClickListener() {
+		builder.setNegativeButton("å–æ¶ˆ", new OnClickListener() {
 			
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -80,6 +80,5 @@ public class SplashActivity extends BaseActivity{
 		d.setCanceledOnTouchOutside(false);
 		d.show();
 	}
-	
 	
 }

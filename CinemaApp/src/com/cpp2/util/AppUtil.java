@@ -130,8 +130,8 @@ public class AppUtil {
 	
 	/* 获取 Session Id */
 	static public String getSessionId () {
-		User customer = User.getInstance();
-		return customer.getSessionId();
+		User user = User.getInstance();
+		return user.getSessionId();
 	}
 	
 	/**
@@ -200,4 +200,7 @@ public class AppUtil {
 		long free = Runtime.getRuntime().freeMemory();
 		return total - free;
 	}
+
+	
+	
 }

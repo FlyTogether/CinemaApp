@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal" >
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dip"
+        android:orientation="vertical"
+ 	   	android:id="@+id/movie_view_linearlayout">
+        
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:id="@+id/movie_view_gallery_linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="90dip"
+        android:layout_below="@id/movie_view_linearlayout"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+	    <TextView 
+	        android:id="@+id/movie_gallery_moviename"
+	        android:layout_width="180dip"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:textSize="20sp"
+	        android:singleLine="true"
+	        android:ellipsize="end"/>
+	    <RelativeLayout 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center">
+		    <RatingBar 
+		        android:id="@+id/movie_gallery_ratingbar"
+		        android:layout_width="wrap_content"
+		        android:layout_height="30dip"
+		        android:layout_marginTop="10dip"
+		        android:layout_marginRight="10dip"
+		        android:numStars="5"
+		        android:isIndicator="true"
+		        android:stepSize="0.5"
+		        android:max="10"
+		        style="?android:attr/ratingBarStyleSmall"
+		        />
+		    <TextView 
+		        android:id="@+id/movie_gallery_rating"
+		        android:layout_width="40dip"
+		        android:layout_height="30dip"
+		        android:gravity="center"
+		        android:layout_toRightOf="@id/movie_gallery_ratingbar"/>
+		</RelativeLayout>
+	</LinearLayout>
+</RelativeLayout>

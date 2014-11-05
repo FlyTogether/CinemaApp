@@ -60,6 +60,7 @@ public class IOUtil {
 			conn.connect();
 			InputStream is = conn.getInputStream();
 			bitmap = BitmapFactory.decodeStream(is);
+			Log.w(TAG, "远程得到的图片："+bitmap);
 			is.close();
 		} catch (IOException e) {
 			e.printStackTrace();

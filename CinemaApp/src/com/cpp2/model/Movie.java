@@ -6,6 +6,7 @@ public class Movie extends BaseModel{
 	
 	public final static String COL_ID ="id" ;
 	public final static String COL_MOVIENAME = "movieName" ;
+	public final static String COL_MOVIEIMAGE = "movieImage";
 	public final static String COL_DIRECTOR = "director" ;
 	public final static String COL_SHOWTIME = "showTime" ;
 	public final static String COL_RUNTIME = "runTime" ;
@@ -21,12 +22,13 @@ public class Movie extends BaseModel{
 	
 	private String id;
 	private String movieName;
+	private String movieImage;
 	private String director;
 	private String showTime;
 	private String runTime;
 	private String castActor;
 	private String language;
-	private String style;
+	private String style;//3D or 2D
 	private String area;
 	private String type;
 	private String introduction;
@@ -111,5 +113,11 @@ public class Movie extends BaseModel{
 		this.popularity = popularity;
 	}
 	
-	
+
+	public String getMovieImage() {
+		return movieImage;
+	}
+	public void setMovieImage(String movieImage) {
+		this.movieImage = movieImage;
+	}
 }

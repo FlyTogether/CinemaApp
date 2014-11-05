@@ -11,13 +11,15 @@ public final class AppVariable {
 		}
 		
 		public static final class api {
-			public static final String base				= "http://192.168.1.2:8001";
+			public static final String base				= "http://10.0.37.108:8080/Campus";
+//			public static final String base				= "http://192.16.137.1:8080/Campus";
+//			public static final String base				= "http://192.168.56.1:8080/Campus";
 			public static final String index			= "/index/index";
 			public static final String login			= "/index/login";
 			public static final String logout			= "/index/logout";
 			public static final String faceView 		= "/image/faceView";
 			public static final String faceList 		= "/image/faceList";
-			public static final String blogList			= "/blog/blogList";
+			public static final String movieList		= "/movie/movieList";
 			public static final String blogView			= "/blog/blogView";
 			public static final String blogCreate		= "/blog/blogCreate";
 			public static final String commentList		= "/comment/commentList";
@@ -35,7 +37,7 @@ public final class AppVariable {
 			public static final int logout				= 1003;
 			public static final int faceView			= 1004;
 			public static final int faceList			= 1005;
-			public static final int blogList			= 1006;
+			public static final int movieList			= 1006;
 			public static final int blogView			= 1007;
 			public static final int blogCreate			= 1008;
 			public static final int commentList			= 1009;
@@ -74,7 +76,7 @@ public final class AppVariable {
 		// additional settings
 		
 		public static final class web {
-			public static final String base				= "http://192.168.1.2:8002";
+			public static final String base				= "http://192.16.137.1:8080";
 			public static final String index			= base + "/index.php";
 			public static final String gomap			= base + "/gomap.php";
 		}

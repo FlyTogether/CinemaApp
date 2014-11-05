@@ -5,9 +5,13 @@
     <string name="app_name">CinemaApp</string>
     <string name="app_slogan">一起去看电影</string>
     <string name="app_slogan2">享受你我的休闲时光</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
-
-    <!--  -->
+    <string name="tab_movie">电影</string>
+	<string name="tab_cinema">影院</string>
+    <string name="tab_discovery">发现</string>
+	<string name="tab_my">我的</string>
     
+    <!-- movie -->
+    <string name="movie_playing">正在热映</string>
+    <string name="movie_willplay">即将上映</string>
+    <string name="action_settings">set</string>
 </resources>

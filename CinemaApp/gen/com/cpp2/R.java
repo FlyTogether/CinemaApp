@@ -457,14 +457,6 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int logo=0x7f01002d;
-        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
-or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-         */
-        public static final int metaButtonBarButtonStyle=0x7f01006f;
-        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
-or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-         */
-        public static final int metaButtonBarStyle=0x7f01006e;
         /**  The type of navigation to use. 
          <p>Must be one of the following constant values.</p>
 <table>
@@ -866,11 +858,10 @@ containing a value of this type.
         public static final int abc_split_action_bar_is_narrow=0x7f060002;
     }
     public static final class color {
-        public static final int abc_search_url_text_holo=0x7f070004;
+        public static final int abc_search_url_text_holo=0x7f070003;
         public static final int abc_search_url_text_normal=0x7f070000;
         public static final int abc_search_url_text_pressed=0x7f070002;
         public static final int abc_search_url_text_selected=0x7f070001;
-        public static final int black_overlay=0x7f070003;
     }
     public static final class dimen {
         /**  Default height of an action bar. 
@@ -956,6 +947,15 @@ containing a value of this type.
  Minimum width of the search view text entry area. 
          */
         public static final int abc_search_view_text_min_width=0x7f08000c;
+        /**  Default screen margins, per the Android Design guidelines. 
+
+         Example customization of dimensions originally defined in res/values/dimens.xml
+         (such as screen margins) for screens with more than 820dp of available width. This
+         would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
+    
+         */
+        public static final int activity_horizontal_margin=0x7f080015;
+        public static final int activity_vertical_margin=0x7f080016;
         /**  The platform's desired fixed height for a dialog along the major axis
          (the screen is in portrait). This may be either a fraction or a dimension.
  The platform's desired fixed height for a dialog along the major axis
@@ -1077,8 +1077,35 @@ containing a value of this type.
         public static final int abc_textfield_searchview_holo_light=0x7f020054;
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
-        public static final int ic_launcher=0x7f020057;
-        public static final int splash_background=0x7f020058;
+        public static final int activity_titlebar_back=0x7f020057;
+        public static final int activity_titlebar_share=0x7f020058;
+        public static final int ic_launcher=0x7f020059;
+        public static final int icon_cinema_nor=0x7f02005a;
+        public static final int icon_cinema_selected=0x7f02005b;
+        public static final int icon_discovery_nor=0x7f02005c;
+        public static final int icon_discovery_selected=0x7f02005d;
+        public static final int icon_movie_nor=0x7f02005e;
+        public static final int icon_movie_selected=0x7f02005f;
+        public static final int icon_my_nor=0x7f020060;
+        public static final int icon_my_selected=0x7f020061;
+        public static final int main_tab_cinema_selector=0x7f020062;
+        public static final int main_tab_discovery_selector=0x7f020063;
+        public static final int main_tab_item_bg=0x7f020064;
+        public static final int main_tab_movie_selector=0x7f020065;
+        public static final int main_tab_my_selector=0x7f020066;
+        public static final int movie_bar_image_changeview_selector=0x7f020067;
+        public static final int movie_bar_image_gallery=0x7f020068;
+        public static final int movie_bar_image_gridview=0x7f020069;
+        public static final int movie_bar_image_playing_selector=0x7f02006a;
+        public static final int movie_bar_image_willplay_selector=0x7f02006b;
+        public static final int movie_detail_background_up=0x7f02006c;
+        public static final int picture_frame=0x7f02006d;
+        public static final int sample1=0x7f02006e;
+        public static final int sample2=0x7f02006f;
+        public static final int sample3=0x7f020070;
+        public static final int sample4=0x7f020071;
+        public static final int sample5=0x7f020072;
+        public static final int splash_background=0x7f020073;
     }
     public static final class id {
         public static final int action_bar=0x7f05001c;
@@ -1092,7 +1119,11 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f050016;
         public static final int action_menu_presenter=0x7f050017;
         public static final int action_mode_close_button=0x7f050024;
+        public static final int action_settings=0x7f050068;
         public static final int activity_chooser_view_content=0x7f050025;
+        public static final int activity_titlebar_back=0x7f05004f;
+        public static final int activity_titlebar_menu=0x7f050051;
+        public static final int activity_titlebar_title=0x7f050050;
         public static final int always=0x7f05000b;
         public static final int beginning=0x7f050011;
         public static final int checkbox=0x7f05002d;
@@ -1105,7 +1136,8 @@ containing a value of this type.
         public static final int end=0x7f050013;
         public static final int expand_activities_button=0x7f050026;
         public static final int expanded_menu=0x7f05002c;
-        public static final int fullscreen_content=0x7f05003c;
+        public static final int fragment_my_content=0x7f050060;
+        public static final int fullscreen_content=0x7f05004e;
         public static final int home=0x7f050014;
         public static final int homeAsUp=0x7f050005;
         public static final int icon=0x7f05002a;
@@ -1113,7 +1145,46 @@ containing a value of this type.
         public static final int image=0x7f050027;
         public static final int listMode=0x7f050001;
         public static final int list_item=0x7f050029;
+        public static final int main_load_bar=0x7f05003c;
+        public static final int main_tab_fragment=0x7f050063;
+        public static final int main_tab_item_image=0x7f050062;
+        public static final int main_tab_item_linearLayout=0x7f050061;
+        public static final int main_tab_item_text=0x7f050052;
         public static final int middle=0x7f050012;
+        public static final int movie_bar=0x7f050053;
+        public static final int movie_bar_image_changeview=0x7f050059;
+        public static final int movie_bar_image_playing=0x7f050055;
+        public static final int movie_bar_image_willplay=0x7f050057;
+        public static final int movie_bar_spinner=0x7f050054;
+        public static final int movie_bar_text_playing=0x7f050056;
+        public static final int movie_bar_text_willplay=0x7f050058;
+        public static final int movie_content_framelayout=0x7f05005a;
+        public static final int movie_detail_ibtn_collect=0x7f050048;
+        public static final int movie_detail_ibtn_comment=0x7f050049;
+        public static final int movie_detail_ibtn_purchase=0x7f05004d;
+        public static final int movie_detail_image=0x7f05003d;
+        public static final int movie_detail_introduction=0x7f05003e;
+        public static final int movie_detail_ratingbar=0x7f050040;
+        public static final int movie_detail_scrollview=0x7f05004c;
+        public static final int movie_detail_tv_area=0x7f050045;
+        public static final int movie_detail_tv_castactor=0x7f050043;
+        public static final int movie_detail_tv_comment=0x7f05004b;
+        public static final int movie_detail_tv_director=0x7f050042;
+        public static final int movie_detail_tv_introduction=0x7f05004a;
+        public static final int movie_detail_tv_rating=0x7f050041;
+        public static final int movie_detail_tv_runtime=0x7f050046;
+        public static final int movie_detail_tv_showtime=0x7f050047;
+        public static final int movie_detail_tv_type=0x7f050044;
+        public static final int movie_gallery_moviename=0x7f05005d;
+        public static final int movie_gallery_rating=0x7f05005f;
+        public static final int movie_gallery_ratingbar=0x7f05005e;
+        public static final int movie_gridview_linearlayout=0x7f05003f;
+        public static final int movie_gridview_movieimage=0x7f050064;
+        public static final int movie_gridview_moviename=0x7f050067;
+        public static final int movie_gridview_rating=0x7f050066;
+        public static final int movie_gridview_ratingbar=0x7f050065;
+        public static final int movie_view_gallery_linearlayout=0x7f05005c;
+        public static final int movie_view_linearlayout=0x7f05005b;
         public static final int never=0x7f050009;
         public static final int none=0x7f050010;
         public static final int normal=0x7f050000;
@@ -1193,8 +1264,22 @@ containing a value of this type.
         public static final int abc_search_dropdown_item_icons_2line=0x7f030015;
         public static final int abc_search_view=0x7f030016;
         public static final int abc_simple_decor=0x7f030017;
-        public static final int activity_splash=0x7f030018;
-        public static final int support_simple_spinner_dropdown_item=0x7f030019;
+        public static final int activity_load_layout=0x7f030018;
+        public static final int activity_movie_detail=0x7f030019;
+        public static final int activity_splash=0x7f03001a;
+        public static final int activity_titlebar=0x7f03001b;
+        public static final int fragment_cinema=0x7f03001c;
+        public static final int fragment_discovery=0x7f03001d;
+        public static final int fragment_movie=0x7f03001e;
+        public static final int fragment_movie_view_layout=0x7f03001f;
+        public static final int fragment_my=0x7f030020;
+        public static final int main_tab_item=0x7f030021;
+        public static final int main_tab_layout=0x7f030022;
+        public static final int movie_grid_item=0x7f030023;
+        public static final int support_simple_spinner_dropdown_item=0x7f030024;
+    }
+    public static final class menu {
+        public static final int main=0x7f0c0000;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1237,30 +1322,34 @@ containing a value of this type.
         /**  Description of a share target (both in the list of such or the default share button) in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
         public static final int abc_shareactionprovider_share_with_application=0x7f0a000b;
+        public static final int action_settings=0x7f0a0016;
         /**  app overall 
          */
         public static final int app_name=0x7f0a000d;
         public static final int app_slogan=0x7f0a000e;
         public static final int app_slogan2=0x7f0a000f;
-        public static final int dummy_button=0x7f0a0010;
-        public static final int dummy_content=0x7f0a0011;
+        /**  movie 
+         */
+        public static final int movie_playing=0x7f0a0014;
+        public static final int movie_willplay=0x7f0a0015;
+        public static final int tab_cinema=0x7f0a0011;
+        public static final int tab_discovery=0x7f0a0012;
+        public static final int tab_movie=0x7f0a0010;
+        public static final int tab_my=0x7f0a0013;
     }
     public static final class style {
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-
     
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
-
         
 
         Base application theme for API 11+. This theme completely replaces
         AppBaseTheme from res/values/styles.xml on API 11+ devices.
-
     
  API 11 theme customizations can go here. 
 
@@ -1275,10 +1364,6 @@ containing a value of this type.
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f0b008c;
-        public static final int ButtonBar=0x7f0b008e;
-        public static final int ButtonBarButton=0x7f0b008f;
-        public static final int FullscreenActionBarStyle=0x7f0b0090;
-        public static final int FullscreenTheme=0x7f0b008d;
         /**  Mimic text appearance in select_dialog_item.xml 
          */
         public static final int TextAppearance_AppCompat_Base_CompactMenu_Dialog=0x7f0b0063;
@@ -2170,46 +2255,6 @@ containing a value of this type.
           @attr name com.cpp2:initialActivityCount
         */
         public static final int ActivityChooserView_initialActivityCount = 0;
-        /** 
-         Declare custom theme attributes that allow changing which styles are
-         used for button bars depending on the API level.
-         ?android:attr/buttonBarStyle is new as of API 11 so this is
-         necessary to support previous API levels.
-    
-           <p>Includes the following attributes:</p>
-           <table>
-           <colgroup align="left" />
-           <colgroup align="left" />
-           <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ButtonBarContainerTheme_metaButtonBarButtonStyle com.cpp2:metaButtonBarButtonStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #ButtonBarContainerTheme_metaButtonBarStyle com.cpp2:metaButtonBarStyle}</code></td><td></td></tr>
-           </table>
-           @see #ButtonBarContainerTheme_metaButtonBarButtonStyle
-           @see #ButtonBarContainerTheme_metaButtonBarStyle
-         */
-        public static final int[] ButtonBarContainerTheme = {
-            0x7f01006e, 0x7f01006f
-        };
-        /**
-          <p>This symbol is the offset where the {@link com.cpp2.R.attr#metaButtonBarButtonStyle}
-          attribute's value can be found in the {@link #ButtonBarContainerTheme} array.
-
-
-          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
-or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.cpp2:metaButtonBarButtonStyle
-        */
-        public static final int ButtonBarContainerTheme_metaButtonBarButtonStyle = 1;
-        /**
-          <p>This symbol is the offset where the {@link com.cpp2.R.attr#metaButtonBarStyle}
-          attribute's value can be found in the {@link #ButtonBarContainerTheme} array.
-
-
-          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
-or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.cpp2:metaButtonBarStyle
-        */
-        public static final int ButtonBarContainerTheme_metaButtonBarStyle = 0;
         /** Attributes that can be used with a CompatTextView.
            <p>Includes the following attributes:</p>
            <table>

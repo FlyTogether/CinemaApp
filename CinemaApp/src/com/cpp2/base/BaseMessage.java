@@ -103,6 +103,7 @@ public class BaseMessage {
 				String jsonKey = it.next();
 				String modelName = getModelName(jsonKey);
 				String modelClassName = "com.cpp2.model." + modelName;
+				System.out.println("modeName: "+modelName);
 				JSONArray modelJsonArray = jsonObject.optJSONArray(jsonKey);
 				// JSONObject
 				if (modelJsonArray == null) {
@@ -140,6 +141,7 @@ public class BaseMessage {
 		Iterator<String> it = modelJsonObject.keys();
 		while (it.hasNext()) {
 			String varField = it.next();
+			System.out.println("变量名field: "+varField);
 			String varValue = modelJsonObject.getString(varField);
 			Field field = modelClass.getDeclaredField(varField);
 			field.setAccessible(true); // have private to be accessable
