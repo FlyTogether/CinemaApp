@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="45dip" 
+     android:background="@drawable/nav_bar">
+    
+    <ImageButton 
+        android:id="@+id/activity_titlebar_back"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:background="@drawable/sc_icon_back"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dip"
+        android:layout_centerVertical="true"/>
+    
+    <TextView 
+        android:id="@+id/activity_titlebar_title"
+        android:layout_width="210dip"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+		android:ellipsize="end"
+		android:singleLine="true"
+		android:textSize="17sp"
+		android:textColor="@android:color/white"/>
+    
+    <ImageButton 
+        android:id="@+id/activity_titlebar_menu"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:background="@drawable/movie_bar_image_changeview_selector"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dip"
+        android:layout_centerVertical="true"/>
+
+</RelativeLayout>
+</merge>

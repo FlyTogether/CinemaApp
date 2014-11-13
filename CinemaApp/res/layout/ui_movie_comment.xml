@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <include 
+        android:layout_width="match_parent"
+	    android:layout_height="45dip"
+	    layout="@layout/ui_titlebar" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="45dip"
+        android:background="@drawable/background" >
+
+        <EditText
+            android:id="@+id/movie_comment_edt"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="top"
+            android:lines="5"
+            android:singleLine="false"/>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/movie_comment_submit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="评论" >
+            </Button>
+        </LinearLayout>
+    </LinearLayout>
+
+</merge>

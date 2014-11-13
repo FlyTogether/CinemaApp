@@ -1,0 +1,115 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:isScrollContainer="true"
+    android:scrollbarAlwaysDrawVerticalTrack="true" 
+    android:background="@drawable/background">
+
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="45dip"
+        android:id="@+id/fra_cinema_bar">
+        <TextView 
+            android:id="@+id/fra_cinema_bar_text"
+            android:layout_width="wrap_content"
+            android:layout_height="25dip"
+           	android:layout_alignParentLeft="true"
+           	android:layout_centerVertical="true"
+           	android:layout_marginLeft="10dip"
+            android:text="beijing"
+            android:singleLine="true"/>
+        <ImageView
+            android:layout_height="7dip"
+            android:layout_width="10dip"
+           	android:layout_marginLeft="0dip"
+           	android:layout_toRightOf="@id/fra_cinema_bar_text"
+           	android:layout_centerVertical="true"
+           	android:background="@drawable/main_icon_gps"/>
+        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="17sp"
+            android:text="@string/fra_cinema_title"/>
+        
+        <ImageButton 
+            android:layout_height="20dip"
+            android:layout_width="20dip"
+            android:id="@+id/movie_bar_image_changeview"
+            android:background="@drawable/ml_icon_find"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dip"/>
+    </RelativeLayout>
+    
+    <TextView
+        android:id="@+id/text1"
+        android:background="@drawable/listview_head_background"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fra_cinema_bar"
+        android:layout_marginTop="10dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:textDirection="locale"
+        android:text="@string/tab_cinema_often"
+        android:textColor="#FFFFFF" />
+
+    <ImageView 
+        android:id="@+id/fra_cinema_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_below="@id/text1"
+        android:background="@drawable/m_line1"/>
+    
+    <ListView
+        android:id="@+id/cinema_listview1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fra_cinema_line"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:background="@drawable/listview_body_background"
+        android:cacheColorHint="#00000000"
+        android:minHeight="100dp" >
+    </ListView>
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cinema_listview1"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:text="@string/tab_cinema_nearby"
+
+        android:background="@drawable/listview_head_background"
+        android:textColor="#FFFFFF" />
+
+    <ImageView 
+        android:id="@+id/fra_cinema_line2"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_below="@id/text2"
+        android:background="@drawable/m_line1"/>
+    
+    <ListView
+        android:id="@+id/cinema_listview2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text2"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:background="@drawable/listview_body_background"
+        android:minHeight="100dp"
+        android:cacheColorHint="#00000000" >
+    </ListView>
+
+</RelativeLayout>

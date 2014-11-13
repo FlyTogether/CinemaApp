@@ -2,7 +2,9 @@ package com.cpp2.list;
 
 import java.util.List;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,18 +15,24 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.cpp2.R;
+import com.cpp2.base.BaseActivity;
 import com.cpp2.model.Movie;
+import com.cpp2.util.AppCache;
+import com.cpp2.util.AppUtil;
+import com.cpp2.util.SDUtil;
 
 /**
  * 电影界面的网格适配器
  * @author DeathLove
  *
  */
+@SuppressLint("InflateParams")
 public class GridAdapter extends BaseAdapter{
 	
 	private Context context;
 	private LayoutInflater inflater;
 	private List<Movie> movieList;
+	private List<Bitmap> movieImageList;
 	//网格中每一格的宽与高
 	private int width, height;
 	
@@ -75,6 +83,10 @@ public class GridAdapter extends BaseAdapter{
 	public long getItemId(int position) {
 		return position;
 	}
+	
+	public void setImageList(List<Bitmap> imageList){
+		this.movieImageList = imageList;
+	}
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
@@ -83,7 +95,7 @@ public class GridAdapter extends BaseAdapter{
 		//如果convertView存在，则从中得到该网格的对象，类似缓存，优化显示效果；不存在则新建对象
 		if(convertView == null){
 			item = new GridViewItem();
-			convertView = inflater.inflate(R.layout.movie_grid_item, null);
+			convertView = inflater.inflate(R.layout.gridview_movie_item, null);
 			convertView.setLayoutParams(new GridView.LayoutParams(width, height));
 			convertView.setPadding(12, 8, 12, 8);
 			
@@ -96,10 +108,19 @@ public class GridAdapter extends BaseAdapter{
 		else{
 			item = (GridViewItem)convertView.getTag();
 		}
-		item.movieImage.setBackgroundResource(R.drawable.sample4);
+		Bitmap bitmap = SDUtil.getSample(AppUtil.md5(movie.getImage()));
+		if(bitmap != null)
+			item.movieImage.setImageBitmap(bitmap);
+//		else{
+//			if(movieImageList != null){
+//				item.movieImage.setImageBitmap(movieImageList.get(position));
+//			}
+//		}
+			
+//		((BaseActivity)context).loadImage(item.movieImage, movie.getMovieImage());
 		item.ratingBar.setRating(Float.parseFloat(movie.getPopularity())/2);
 		item.rating.setText(movie.getPopularity());
-		item.movieName.setText(movie.getMovieName());
+		item.movieName.setText(movie.getName());
 		
 		return convertView;
 	}

@@ -2,33 +2,15 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android" >
     
     <item 
-        android:state_pressed="true" >
-		<shape  android:shape="rectangle">
-		    <corners 
-		        android:topLeftRadius="18dip"
-		        android:bottomLeftRadius="18dip"/>
-		    <solid android:color="#fff"/>
-		</shape>
+        android:state_pressed="true" android:drawable="@drawable/main_but1_sel">
 	</item>
 	
     <item 
-        android:state_selected="true">
-		<shape  android:shape="rectangle">
-		    <corners 
-		        android:topLeftRadius="18dip"
-		        android:bottomLeftRadius="18dip"/>
-		    <solid android:color="#fff"/>
-		</shape>
+        android:state_selected="true" android:drawable="@drawable/main_but1_sel">
 	</item>
     
     <item 
-        android:state_selected="false">
-		<shape  android:shape="rectangle" >
-		    <corners 
-		        android:topLeftRadius="18dip"
-		        android:bottomLeftRadius="18dip"/>
-		    <solid android:color="#000"/>
-		</shape>
+        android:state_selected="false" android:drawable="@drawable/main_but1_daf">
 	</item>
     
 </selector>

@@ -1,17 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	
+
     <!-- app overall -->
     <string name="app_name">CinemaApp</string>
     <string name="app_slogan">一起去看电影</string>
     <string name="app_slogan2">享受你我的休闲时光</string>
     <string name="tab_movie">电影</string>
-	<string name="tab_cinema">影院</string>
+    <string name="tab_cinema">影院</string>
     <string name="tab_discovery">发现</string>
-	<string name="tab_my">我的</string>
-    
+    <string name="tab_my">我的</string>
+
     <!-- movie -->
     <string name="movie_playing">正在热映</string>
     <string name="movie_willplay">即将上映</string>
     <string name="action_settings">set</string>
+    <!-- movie detail -->
+    <string name="movie_collect">收藏</string>
+    <string name="movie_comment">评论</string>
+    <string name="movie_introduction">剧情介绍</string>
+    <string name="movie_comments">影评</string>
+    <string name="movie_purchase">立即购票</string>
+    <string name="movie_pay">付款</string>
+
+    <!-- 提示文字 -->
+    <string name="msg_loginfail">登录失败</string>
+
+    <!-- 界面文字 -->
+    <string name="login_title">一起看电影</string>
+    <string name="login_username">账户</string>
+    <string name="login_username_hint">手机号/邮箱/用户名</string>
+    <string name="login_password_hint">密码</string>
+    <string name="login_password">密码</string>
+    <string name="login_remember">记住密码</string>
+    <string name="login_submit">登录</string>
+    <string name="login_button_register">注册</string>
+    <string name="login_button_forget_password">忘记密码</string>
+    <string name="register">注册</string>
+    <string name="register_confirm">确认</string>
+    <string name="register_boy">男</string>
+    <string name="register_girl">女</string>
+    <string name="register_username">用户名</string>
+    <string name="register_confirmpassword">确认密码</string>
+    <string name="register_password">密码</string>
+    <string name="register_gender">性别</string>
+    <string name="register_birthday">生日</string>
+    <string name="register_email">邮箱</string>
+    <string name="register_phone">手机号</string>
+    <string name="app_demos_client"></string>
+    <string name="default_myinfo_sign"></string>
+    <string name="default_myinfo_id"></string>
+    
+    <!-- account -->
+    <string name="my_film_friend">我的影友</string>
+    <string name="my_collect">我的收藏</string>
+    <string name="the_billing_details">订单详情</string>
+    <string name="discount">优惠券</string>
+    <string name="setting">设置</string>
+    <string name="my_acount">我的账户</string>
+    <string name="not_login">你还没登陆，登陆请按我一下</string>
+    <string name="forgotten">忘记密码</string>
+    <string name="forgotten_username">用户名</string>
+    <string name="forgotten_password">新密码</string>
+    <string name="forgotten_confirm">确认</string>
+    <string name="forgotten_phone">手机号</string>
+    <string name="logout">注销</string>
+    
+    <!-- my cinema -->
+    <string name="fra_cinema_title">影院列表</string>
+    <string name="tab_cinema_often">常去的影院</string>
+    <string name="tab_cinema_nearby">附近的影院</string>
+    <string name="talking_send">发送</string>
+    <string name="talking_loading">数据加载中</string>
+
 </resources>

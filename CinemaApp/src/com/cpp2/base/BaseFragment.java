@@ -2,23 +2,33 @@ package com.cpp2.base;
 
 import java.util.HashMap;
 
-import android.graphics.Bitmap;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.Message;
 import android.support.v4.app.Fragment;
-import android.view.View;
 import android.widget.ImageView;
-import android.widget.SimpleAdapter.ViewBinder;
-
-import com.cpp2.util.AppCache;
 
 public class BaseFragment extends Fragment{
+	/**
+	 * 每个Activity中的用于处理UI主线程任务的BaseHandler，一般都要Activity自己去继承，拓展方法
+	 */
+	protected BaseFragmentHandler handler;
 	protected BaseActivity context;
 	
-	public BaseFragment(BaseActivity context){
+	public BaseFragment(){
+		
+	}
+//	public BaseFragment(BaseActivity context){
+//		this.context = context;
+//		setHandler(new BaseHandler(context, this));
+//	}
+	/**
+	 * 通过此方法将包含此Fragment的Activity对象传入其中，
+	 * 创建默认的BaseFragmentHandler对象，方便Fragment调用Activity的方法
+	 * @param context
+	 */
+	public void setContext(BaseActivity context){
 		this.context = context;
-		setHandler(new BaseHandler(context, this));
+		this.handler = new BaseFragmentHandler(context, this);
 	}
 
 	/**
@@ -76,8 +86,8 @@ public class BaseFragment extends Fragment{
 	 * 设置当前Activity的Handler
 	 * @param handler BaseHandler或者他的子类
 	 */
-	public void setHandler (BaseHandler handler) {
-		context.setHandler(handler);
+	public void setHandler (BaseFragmentHandler handler) {
+		this.handler = handler;
 	}
 	
 	/**
@@ -106,47 +116,90 @@ public class BaseFragment extends Fragment{
 	
 	/*******************logic method**********************/
 	public void sendMessage (int what) {
-		context.sendMessage(what);
+		Message m = new Message();
+		m.what = what;
+		handler.sendMessage(m);
 	}
 	
 	public void sendMessage (int what, String data) {
-		context.sendMessage(what, data);
+		Bundle b = new Bundle();
+		b.putString("data", data);
+		Message m = new Message();
+		m.what = what;
+		m.setData(b);
+		handler.sendMessage(m);
 	}
 	
 	public void sendMessage (int what, int taskId, String data) {
-		context.sendMessage(what, taskId, data);
+		Bundle b = new Bundle();
+		b.putInt("task", taskId);
+		b.putString("data", data);
+		Message m = new Message();
+		m.what = what;
+		m.setData(b);
+		handler.sendMessage(m);
 	}
 	
 	public void doTaskAsync (int taskId, int delayTime) {
-		context.doTaskAsync(taskId, delayTime);
+		context.taskPool.addTask(taskId, new BaseTask(){
+			@Override
+			public void onComplete () {
+				sendMessage(BaseTask.TASK_COMPLETE, this.getId(), null);
+			}
+			@Override
+			public void onError (String error) {
+				sendMessage(BaseTask.NETWORK_ERROR, this.getId(), null);
+			}
+		}, delayTime);
 	}
 	
 	public void doTaskAsync (int taskId, BaseTask baseTask, int delayTime) {
-		context.doTaskAsync(taskId, delayTime);
+		context.taskPool.addTask(taskId, baseTask, delayTime);
 	}
 	
 	public void doTaskAsync (int taskId, String taskUrl) {
-		context.doTaskAsync(taskId, taskId);
+		showLoadBar();
+		context.taskPool.addTask(taskId, taskUrl, new BaseTask(){
+			@Override
+			public void onComplete (String httpResult) {
+				sendMessage(BaseTask.TASK_COMPLETE, this.getId(), httpResult);
+			}
+			@Override
+			public void onError (String error) {
+				sendMessage(BaseTask.NETWORK_ERROR, this.getId(), null);
+			}
+		}, 0);
 	}
 	
 	public void doTaskAsync (int taskId, String taskUrl, HashMap<String, String> taskArgs) {
-		context.doTaskAsync(taskId, taskUrl, taskArgs);
+		showLoadBar();
+		context.taskPool.addTask(taskId, taskUrl, taskArgs, new BaseTask(){
+			@Override
+			public void onComplete (String httpResult) {
+				sendMessage(BaseTask.TASK_COMPLETE, this.getId(), httpResult);
+			}
+			@Override
+			public void onError (String error) {
+				sendMessage(BaseTask.NETWORK_ERROR, this.getId(), null);
+			}
+		}, 0);
 	}
 	
-
-	public class BitmapViewBinder implements ViewBinder {
-		// 
-		@Override
-		public boolean setViewValue(View view, Object data, String textRepresentation) {
-			if ((view instanceof ImageView) & (data instanceof Bitmap)) {
-				ImageView iv = (ImageView) view;
-				Bitmap bm = (Bitmap) data;
-				iv.setImageBitmap(bm);
-				return true;
-			}
-			return false;
-		}
-	}
+//	public void doTaskAsync (int taskId, int delayTime) {
+//		context.doTaskAsync(taskId, delayTime);
+//	}
+//	
+//	public void doTaskAsync (int taskId, BaseTask baseTask, int delayTime) {
+//		context.doTaskAsync(taskId, delayTime);
+//	}
+//	
+//	public void doTaskAsync (int taskId, String taskUrl) {
+//		context.doTaskAsync(taskId, taskId);
+//	}
+//	
+//	public void doTaskAsync (int taskId, String taskUrl, HashMap<String, String> taskArgs) {
+//		context.doTaskAsync(taskId, taskUrl, taskArgs);
+//	}
 	
 	public boolean isNetWorkConnected(){
 		return context.isNetWorkConnected();

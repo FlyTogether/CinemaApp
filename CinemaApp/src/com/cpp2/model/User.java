@@ -1,172 +1,148 @@
 package com.cpp2.model;
 
+import java.util.Date;
+
 import com.cpp2.base.BaseModel;
 
-public class User extends BaseModel{
+public class User extends BaseModel {
+	
+//	public final static String COL_ID = "id";
+//	public final static String COL_SID = "sid";
+//	public final static String COL_NAME = "name";
+//	public final static String COL_PASS = "pass";
+//	public final static String COL_SIGN = "sign";
+//	public final static String COL_FACE = "face";
+//	public final static String COL_FACEURL = "faceurl";
+//	public final static String COL_BLOGCOUNT = "blogcount";
+//	public final static String COL_FANSCOUNT = "fanscount";
+//	public final static String COL_UPTIME = "uptime";
+	
+	private int id;
+	public int getId() {
+		return id;
+	}
 
-	// model columns
-		public final static String COL_ID = "id";
-		public final static String COL_SESSIONID = "sessionId";
-		public final static String COL_NAME = "name";
-		public final static String COL_PASS = "pass";
-		public final static String COL_PHONE = "phone";
-		public final static String COL_GENDER = "gender";
-		public final static String COL_VIP = "vip";
-		public final static String COL_SIGN = "sign";
-		public final static String COL_EMAIL = "email";
-		public final static String COL_FACEURL = "faceurl";
-		public final static String COL_BLOGCOUNT = "blogcount";
-		public final static String COL_FANSCOUNT = "fanscount";
-		public final static String COL_UPTIME = "uptime";
-		
-		private String id;
-		private String sessionId;
-		private String name;
-		private String pass;
-		private String phone;
-		private String gender;
-		private String vip;
-		private String sign;
-		private String email;
-		private String faceurl;
-		private String blogcount;
-		private String fanscount;
-		private String uptime;
-		
-		// default is no login
-		private boolean isLogin = false;
-		
-		// single instance for login
-		static private User user = null;
-		
-		static public User getInstance () {
-			if (User.user == null) {
-				User.user = new User();
-			}
-			return User.user;
-		}
-		//make the constructor private for single instance
-		private User () {}
+	public void setId(int id) {
+		this.id = id;
+	}
 
-		public String getId() {
-			return id;
-		}
+	public String getUsername() {
+		return username;
+	}
 
-		public void setId(String id) {
-			this.id = id;
-		}
+	public void setUsername(String username) {
+		this.username = username;
+	}
 
-		public String getSessionId() {
-			return sessionId;
-		}
+	public String getPassword() {
+		return password;
+	}
 
-		public void setSessionId(String sessionId) {
-			this.sessionId = sessionId;
-		}
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
-		public String getName() {
-			return name;
-		}
+	public String getPhone() {
+		return phone;
+	}
 
-		public void setName(String name) {
-			this.name = name;
-		}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 
-		public String getPass() {
-			return pass;
-		}
+	public String getGender() {
+		return gender;
+	}
 
-		public void setPass(String pass) {
-			this.pass = pass;
-		}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
 
-		public String getPhone() {
-			return phone;
-		}
+	public String getVip() {
+		return vip;
+	}
 
-		public void setPhone(String phone) {
-			this.phone = phone;
-		}
+	public void setVip(String vip) {
+		this.vip = vip;
+	}
 
-		public String getGender() {
-			return gender;
-		}
+	public String getState() {
+		return state;
+	}
 
-		public void setGender(String gender) {
-			this.gender = gender;
-		}
+	public void setState(String state) {
+		this.state = state;
+	}
 
-		public String getVip() {
-			return vip;
-		}
+	public Date getBirthday() {
+		return birthday;
+	}
 
-		public void setVip(String vip) {
-			this.vip = vip;
-		}
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
+	}
 
-		public String getSign() {
-			return sign;
-		}
+	public String getEmail() {
+		return email;
+	}
 
-		public void setSign(String sign) {
-			this.sign = sign;
-		}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-		public String getEmail() {
-			return email;
-		}
+	public double getConsumption() {
+		return consumption;
+	}
 
-		public void setEmail(String email) {
-			this.email = email;
-		}
+	public void setConsumption(double consumption) {
+		this.consumption = consumption;
+	}
 
-		public String getFaceurl() {
-			return faceurl;
-		}
+	public boolean isLogin() {
+		return isLogin;
+	}
 
-		public void setFaceurl(String faceurl) {
-			this.faceurl = faceurl;
-		}
+	public void setLogin(boolean isLogin) {
+		this.isLogin = isLogin;
+	}
 
-		public String getBlogcount() {
-			return blogcount;
-		}
+	private String username;
+	private String password;
 
-		public void setBlogcount(String blogcount) {
-			this.blogcount = blogcount;
-		}
+	private String face;
 
-		public String getFanscount() {
-			return fanscount;
-		}
+	private String phone;
+	private String gender;
+	private String vip;
 
-		public void setFanscount(String fanscount) {
-			this.fanscount = fanscount;
+	private String state;
+	private Date birthday;
+	private String email;
+	private double consumption;			
+	// default is no login
+	private boolean isLogin = false;
+	
+	// single instance for login
+	static private User customer = null;
+	
+	static public User getInstance () {
+		if (User.customer == null) {
+			User.customer = new User();
 		}
+		return User.customer;
+	}
+	
+	public User () {}
 
-		public String getUptime() {
-			return uptime;
-		}
+	public String getFace() {
+		return face;
+	}
 
-		public void setUptime(String uptime) {
-			this.uptime = uptime;
-		}
-
-		public boolean isLogin() {
-			return isLogin;
-		}
-
-		public void setLogin(boolean isLogin) {
-			this.isLogin = isLogin;
-		}
-
-		public static User getCustomer() {
-			return user;
-		}
-
-		public static void setCustomer(User user) {
-			User.user = user;
-		}
-		
-		
+	public void setFace(String face) {
+		this.face = face;
+	}
+	
+	
+	
+	
 }

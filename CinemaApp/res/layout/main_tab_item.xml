@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
     android:id="@+id/main_tab_item_linearLayout">
     
     <ImageView 
-        android:layout_height="fill_parent"
-        android:layout_width="fill_parent"
-        android:layout_margin="5dip"
+        android:layout_height="20dip"
+        android:layout_width="20dip"
         android:id="@+id/main_tab_item_image"
-        android:scaleType="fitXY"/>
+        android:layout_marginTop="4dip"/>
 
+    <TextView 
+        android:layout_marginTop="2dip"
+        android:layout_marginBottom="2dip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_tab_item_text"
+        android:textColor="@android:color/white"
+        />
+    
 </LinearLayout>

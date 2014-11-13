@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:isScrollContainer="true" >
+
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:layout_alignParentTop="true"
+        android:id="@+id/movie_bar"
+        android:background="#00314d">
+        <TextView 
+            android:layout_width="120dip"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_my"
+            android:textSize="17sp"
+            android:layout_centerInParent="true"
+            android:gravity="center"/>
+        <ImageView 
+            android:layout_width="20dip"
+            android:layout_height="20dip"
+            android:background="@drawable/me_icon_inf"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dip"
+            />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/islogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+      android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_weight="0.5"
+        android:background="@android:color/transparent"
+        android:text="@string/login_submit"
+        android:textColor="#FFFFFF" />
+<TextView
+        android:id="@+id/not_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:text="@string/not_login"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/islogin"
+        />
+</RelativeLayout>

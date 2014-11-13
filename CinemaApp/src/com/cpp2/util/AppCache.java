@@ -35,6 +35,19 @@ public class AppCache {
 	}
 	
 	/**
+	 * 从网络上下载图片并存到SD卡中（貌似里面已经有线程）
+	 * @param ctx 要查找图片的上下文对象
+	 * @param url 要查找的图片的网络地址
+	 * @return 要查找的图片对象
+	 */
+	public static Bitmap getRemoteImage(Context ctx, String url){
+		String cacheKey = AppUtil.md5(url);
+		Bitmap newImage = IOUtil.getBitmapRemote(ctx, url);
+		SDUtil.saveImage(newImage, cacheKey);
+		return newImage;
+	}
+	
+	/**
 	 * 通过图片的url在缓存中查找对应的Bitmap对象，没有则返回null，注：没开线程
 	 * @param url 要查找的图片的网络地址
 	 * @return 要查找的图片对象

@@ -129,10 +129,10 @@ public class AppUtil {
 	// 业务逻辑
 	
 	/* 获取 Session Id */
-	static public String getSessionId () {
-		User user = User.getInstance();
-		return user.getSessionId();
-	}
+//	static public String getSessionId () {
+//		User user = User.getInstance();
+//		return user.getSessionId();
+//	}
 	
 	/**
 	 *  JSon形式的String对象中获取 Message 

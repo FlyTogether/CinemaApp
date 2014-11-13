@@ -1,7 +1,10 @@
 package com.cpp2.base;
 
 import java.lang.reflect.Field;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -9,7 +12,8 @@ import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import com.cpp2.base.BaseModel;
+import android.util.Log;
+
 import com.cpp2.util.AppUtil;
 
 /**
@@ -136,16 +140,46 @@ public class BaseMessage {
 	private BaseModel json2model (String modelClassName, JSONObject modelJsonObject) throws Exception  {
 		// auto-load model class
 		BaseModel modelObj = (BaseModel) Class.forName(modelClassName).newInstance();
+		
 		Class<? extends BaseModel> modelClass = modelObj.getClass();
 		// auto-setting model fields
 		Iterator<String> it = modelJsonObject.keys();
 		while (it.hasNext()) {
+			//属性名id
 			String varField = it.next();
-			System.out.println("变量名field: "+varField);
+		    //属性的值1
 			String varValue = modelJsonObject.getString(varField);
+			//类的全名
 			Field field = modelClass.getDeclaredField(varField);
-			field.setAccessible(true); // have private to be accessable
-			field.set(modelObj, varValue);
+			
+				field.setAccessible(true); 
+				//修改的
+				if(varField.equals("id")){
+					field.set(modelObj, Integer.parseInt(varValue));
+				}
+				else if (varField.equals("birthday")) {
+					SimpleDateFormat simpleDateFormat = new SimpleDateFormat(
+							"yyyy-MM-dd HH:mm:ss");
+					Date date = null;			
+					try {
+						date = simpleDateFormat.parse(varValue);
+						field.set(modelObj, date);
+					} catch (ParseException e) {
+						e.printStackTrace();
+					}
+				}else if(varField.equals("consumption")){
+					field.set(modelObj, Double.parseDouble(varValue));
+				}else if(varField.equals("showtime")){
+					JSONObject object = new JSONObject(varValue);
+					int year = object.getInt("year") + 1900;
+					int month = object.getInt("month") + 1;
+					int day = object.getInt("date");
+					field.set(modelObj, year+"-"+month+"-"+day);
+					System.out.println("showtime: ----  "+year+"-"+month+"-"+day);
+				}
+				else {
+					field.set(modelObj,varValue);
+				}
 		}
 		return modelObj;
 	}

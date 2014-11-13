@@ -10,6 +10,8 @@ import java.net.MalformedURLException;
 import java.net.Proxy;
 import java.net.URL;
 
+import com.cpp2.base.AppVariable;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -41,6 +43,7 @@ public class IOUtil {
 		URL myFileUrl = null;
 		Bitmap bitmap = null;
 		try {
+			url = AppVariable.api.base +"/upload/"+ url;
 			Log.w(TAG, url);
 			myFileUrl = new URL(url);
 		} catch (MalformedURLException e) {

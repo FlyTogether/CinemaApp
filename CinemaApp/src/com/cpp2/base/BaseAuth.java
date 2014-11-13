@@ -5,28 +5,27 @@ import com.cpp2.model.User;
 public class BaseAuth {
 	
 	static public boolean isLogin () {
-		User user = User.getInstance();
-		if (user.isLogin() == true) {
+		User customer = User.getInstance();
+		if (customer.isLogin() == true) {
 			return true;
 		}
 		return false;
 	}
 	
 	static public void setLogin (Boolean status) {
-		User user = User.getInstance();
-		user.setLogin(status);
+		User customer = User.getInstance();
+		customer.setLogin(status);
 	}
 	
-	static public void setUser (User u) {
-		User user = User.getInstance();
-		user.setId(u.getId());
-//		user.setSid(u.getSid());
-		user.setName(u.getName());
-		user.setSign(u.getSign());
-		user.setFaceurl(u.getFaceurl());
+	static public void setCustomer (User mc) {
+		User customer = User.getInstance();
+		customer.setId(mc.getId());
+		
+		customer.setUsername(mc.getUsername());
+		
 	}
 	
-	static public User getUser () {
+	static public User getCustomer () {
 		return User.getInstance();
 	}
 }

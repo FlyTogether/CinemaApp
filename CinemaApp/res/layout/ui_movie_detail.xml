@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:orientation="vertical" >
+	
+	    <include
+	        android:layout_width="match_parent"
+	        android:layout_height="45dip"
+	        layout="@layout/ui_titlebar" />
+	
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="200dip"
+	        android:orientation="vertical"
+	        android:background="@drawable/movie_detail_background_up"
+	        android:paddingLeft="10dip"
+	        android:paddingRight="10dip">
+	        
+		    <RelativeLayout 
+		        android:layout_width="match_parent"
+		        android:layout_height="160dip"
+		        android:gravity="center">
+		        
+		        <ImageView 
+		            android:id="@+id/movie_detail_image"
+		            android:layout_width="100dip"
+		            android:layout_height="match_parent"
+		            android:layout_margin="15dip"
+		            />
+		        <LinearLayout 
+		            android:layout_width="200dip"
+		            android:layout_height="match_parent"
+		            android:id="@+id/movie_detail_introduction"
+		            android:layout_toRightOf="@id/movie_detail_image"
+		            android:layout_marginLeft="0dip"
+		            android:layout_marginRight="10dip"
+		            android:layout_marginTop="15dip"
+		            android:layout_marginBottom="15dip"
+		            android:orientation="vertical">
+		            
+		            <RelativeLayout 
+				        android:id="@+id/movie_gridview_linearlayout"
+				        android:layout_width="fill_parent"
+				        android:layout_height="wrap_content"
+				        android:gravity="center_vertical">
+					    <RatingBar 
+				      	  	android:id="@+id/movie_detail_ratingbar"
+					        android:layout_width="wrap_content"
+					        android:layout_height="wrap_content"
+					        android:numStars="5"
+					        android:isIndicator="true"
+					        android:stepSize="0.5"
+					        android:max="10"
+					        style="?android:attr/ratingBarStyleSmall"
+					        android:layout_centerVertical="true"/>
+					    <TextView
+					        android:text="7.3分"
+				      	  	android:id="@+id/movie_detail_tv_rating"
+					        android:layout_width="wrap_content"
+					        android:layout_height="wrap_content"
+					        android:layout_toRightOf="@id/movie_detail_ratingbar"
+					        android:layout_marginLeft="7dip"/>
+	    			</RelativeLayout>
+		            
+		            <TextView 
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:text="导演："
+		                android:textSize="12sp"
+		                android:ellipsize="end"
+		                android:singleLine="true"
+		                android:id="@+id/movie_detail_tv_director"/>
+		            <TextView 
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:text="主演："
+		                android:textSize="12sp"
+		                android:ellipsize="end"
+		                android:singleLine="true"
+		                android:id="@+id/movie_detail_tv_castactor"/>
+		            <TextView 
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:text="类型："
+		                android:ellipsize="end"
+		                android:singleLine="true"
+		                android:textSize="12sp"
+		                android:id="@+id/movie_detail_tv_type"/>
+		            <TextView 
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:text="地区："
+		                android:ellipsize="end"
+		                android:singleLine="true"
+		                android:textSize="12sp"
+		                android:id="@+id/movie_detail_tv_area"/>
+		            <TextView 
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:text="时长："
+		                android:textSize="12sp"
+		                android:id="@+id/movie_detail_tv_runtime"/>
+		            <TextView 
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:text="上映日期："
+		                android:textSize="12sp"
+		                android:id="@+id/movie_detail_tv_showtime"/>
+		            
+		        </LinearLayout>
+		    </RelativeLayout>
+		
+		    <ImageView 
+		        android:layout_width="match_parent"
+		        android:layout_height="1dip"
+		        android:background="@drawable/m_line1"/>
+		    
+		    <RelativeLayout 
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent"
+		        android:paddingLeft="30dip"
+		        android:paddingRight="30dip">
+	
+		        <LinearLayout 
+		            android:layout_width="90dip"
+			        android:layout_height="match_parent"
+			        android:orientation="horizontal">
+			        <ImageButton
+			            android:id="@+id/movie_detail_ibtn_collect"
+			            android:layout_width="20dip"
+			            android:layout_height="20dip"
+			            android:layout_gravity="center_vertical" 
+			            android:background="@drawable/m_icon_heart"/>
+			        <TextView 
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_gravity="center_vertical"
+			            android:paddingLeft="10dip"
+			            android:paddingRight="10dip"
+			            android:text="@string/movie_collect"
+			            android:textSize="20sp"/>
+			    </LinearLayout>
+	
+		        <ImageView
+		            android:layout_width="1dip"
+		            android:layout_height="match_parent"
+		            android:background="@drawable/m_line2"
+		            android:layout_centerHorizontal="true"
+		            android:layout_margin="5dip" />
+		        
+		        <LinearLayout 
+		            android:layout_width="90dip"
+			        android:layout_height="match_parent"
+			        android:orientation="horizontal"
+			        android:layout_alignParentRight="true">
+			        <ImageButton
+			            android:id="@+id/movie_detail_ibtn_comment"
+			            android:layout_width="20dip"
+			            android:layout_height="20dip"
+			            android:layout_gravity="center_vertical" 
+			            android:background="@drawable/m_icon_c"/>
+			        <TextView 
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_gravity="center_vertical"
+			            android:paddingLeft="10dip"
+			            android:paddingRight="10dip"
+			            android:text="@string/movie_comment"
+			            android:textSize="20sp"/>
+			    </LinearLayout>
+		        
+		    </RelativeLayout>
+	    </LinearLayout>
+	    
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="0dip"
+	        android:layout_weight="1"
+	        android:orientation="vertical"
+	        android:background="@android:color/white">
+	        
+	        <RelativeLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="40dip"
+	            android:gravity="center">
+		        
+		        <FrameLayout 
+		            android:id="@+id/movie_detail_fl_introduction"
+		            android:layout_width="140dip"
+		            android:layout_height="30dip">
+		            <ImageButton 
+		                android:id="@+id/movie_detail_ibtn_introduction"
+		                android:layout_width="match_parent"
+		                android:layout_height="match_parent"
+		                android:gravity="center"
+		                android:background="@drawable/movie_detail_ibtn_introduce_selector"/>
+		            <TextView 
+		                android:id="@+id/movie_detail_tv_introduction"
+		                android:layout_width="match_parent"
+		                android:layout_height="match_parent"
+		                android:text="@string/movie_introduction"
+		                android:textColor="@android:color/black"
+		                android:textSize="17sp"
+		                android:gravity="center"/>
+	            </FrameLayout>
+	            
+		        <FrameLayout 
+		            android:layout_width="140dip"
+		            android:layout_height="30dip"
+		            android:layout_toRightOf="@id/movie_detail_fl_introduction">
+		            <ImageButton 
+		                android:id="@+id/movie_detail_ibtn_comments"
+		                android:layout_width="140dip"
+		                android:layout_height="30dip"
+		                android:gravity="center"
+		                android:background="@drawable/movie_detail_ibtn_comments_selector"/>
+		            <TextView 
+		                android:id="@+id/movie_detail_tv_comments"
+		                android:layout_width="match_parent"
+		                android:layout_height="match_parent"
+		                android:text="@string/movie_comments"
+		                android:textColor="@android:color/black"
+		                android:textSize="17sp"
+		                android:gravity="center"/>
+		        </FrameLayout>
+	            
+	        </RelativeLayout>
+	        
+	        <ImageView
+	            android:layout_width="match_parent"
+	            android:layout_height="0.5dip"
+	            android:background="@drawable/m_line3"/>
+	        
+	        <ScrollView
+		        android:id="@+id/movie_detail_scrollview"
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent"
+		        android:layout_gravity="center"
+		        android:padding="10dip"
+		        android:layout_margin="7dip"
+		        android:background="#f3f3f4" />
+	        
+	    </LinearLayout>
+	    
+	    <FrameLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="40dip"
+	        android:background="@drawable/nav_bar"
+	        android:layout_gravity="bottom">
+	
+	        <ImageButton
+	            android:id="@+id/movie_detail_ibtn_purchase"
+	            android:layout_width="220dip"
+	            android:layout_height="match_parent"
+	            android:layout_marginTop="5dip"
+	            android:layout_marginBottom="5dip"
+	            android:background="@drawable/m_button3"
+	            android:layout_gravity="center" />
+	        
+	        <TextView 
+	            android:layout_width="220dip"
+	            android:layout_height="match_parent"
+	            android:layout_marginTop="5dip"
+	            android:layout_marginBottom="5dip"
+	            android:gravity="center"
+	            android:layout_gravity="center"
+	            android:text="@string/movie_purchase"
+	            android:textSize="17dip"
+	            android:textColor="@android:color/white"/>
+	
+	    </FrameLayout>
+	</LinearLayout>
+</merge>

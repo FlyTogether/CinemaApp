@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+     android:background="@drawable/xml_background_main"
+    tools:context=".UITalking" >
+<ScrollView 
+    android:layout_width="fill_parent"
+   android:layout_height="wrap_content"
+   android:layout_weight="0.9"
+   android:background="@drawable/xml_background_main"
+    >
+    <TextView
+        android:id="@+id/talking_text"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:text="@string/talking_loading" 
+      android:textColor="#FFFFFF"
+        />
+</ScrollView>
+<LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="0.1"
+    >
+    <EditText 
+       android:id="@+id/msg_edit"
+         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.85"
+        />
+    <Button 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.15"
+        android:text="@string/talking_send"
+        android:id="@+id/talking_send"
+        android:background="@drawable/xml_blue_button"
+        
+        />
+    
+</LinearLayout>
+    
+
+</LinearLayout>

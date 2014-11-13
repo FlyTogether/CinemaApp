@@ -1,0 +1,85 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:isScrollContainer="true"
+    android:scrollbarAlwaysDrawVerticalTrack="true" >
+
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:layout_alignParentTop="true"
+        android:id="@+id/movie_bar"
+        android:background="#00314d">
+        <TextView 
+            android:layout_width="120dip"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_my"
+            android:textSize="17sp"
+            android:layout_centerInParent="true"
+            android:gravity="center"/>
+        <ImageView 
+            android:layout_width="20dip"
+            android:layout_height="20dip"
+            android:background="@drawable/me_icon_inf"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dip"/>
+    </RelativeLayout>
+    
+    <com.cpp2.self_defined.CImageView
+        android:id="@+id/head_image"
+        android:layout_width="60dip"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dip"
+        android:src="@drawable/face" />
+
+    <Button
+        android:id="@+id/login_button_myinfo_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/head_image"
+        android:layout_centerHorizontal="true"
+        android:layout_weight="0.5"
+        android:background="@android:color/transparent"
+        android:text="@string/default_myinfo_id"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/login_button_myinfo_sign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login_button_myinfo_id"
+        android:layout_centerHorizontal="true"
+        android:layout_weight="0.5"
+        android:background="@android:color/transparent"
+        android:text="@string/default_myinfo_sign"
+        android:textColor="#FFFFFF" />
+
+    <ListView
+        android:id="@+id/list1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login_button_myinfo_sign"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:background="@drawable/listview_background"
+        android:cacheColorHint="#00000000" >
+    </ListView>
+
+    <ListView
+        android:id="@+id/list2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/list1"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:background="@drawable/listview_background"
+        android:cacheColorHint="#00000000" >
+    </ListView>
+
+</RelativeLayout>

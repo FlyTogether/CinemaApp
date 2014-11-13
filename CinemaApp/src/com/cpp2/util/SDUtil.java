@@ -8,13 +8,13 @@ import java.io.OutputStream;
 import java.util.Arrays;
 import java.util.Comparator;
 
-import com.cpp2.base.AppVariable;
-
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Environment;
 import android.os.StatFs;
 import android.util.Log;
+
+import com.cpp2.base.AppVariable;
 
 /**
  * 处理内存卡相关操作的类
@@ -63,7 +63,7 @@ public class SDUtil {
 		BitmapFactory.Options options = new BitmapFactory.Options();
 		options.inJustDecodeBounds = true;
 		Bitmap bitmap = BitmapFactory.decodeFile(realFileName, options);
-		int zoom = (int) (options.outHeight / (float) 50);
+		int zoom = (int) (options.outHeight / (float) 170);
 		if (zoom < 0) zoom = 1;
 		// get resized image
 		options.inSampleSize = zoom;

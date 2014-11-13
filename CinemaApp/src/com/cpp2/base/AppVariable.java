@@ -11,24 +11,28 @@ public final class AppVariable {
 		}
 		
 		public static final class api {
-			public static final String base				= "http://10.0.37.108:8080/Campus";
+//			public static final String base				= "http://10.0.36.209:8080/Campus";//桂深电脑本地IP
 //			public static final String base				= "http://192.16.137.1:8080/Campus";
-//			public static final String base				= "http://192.168.56.1:8080/Campus";
-			public static final String index			= "/index/index";
-			public static final String login			= "/index/login";
+//			public static final String base				= "http://192.168.56.1:8080/Campus";//Genymotion虚拟机IP
+			public static final String base				= "http://192.168.1.100:8080/Cinema";//耿秋IP
+			
+			public static final String login			= "/manager/UserServlet";
+			public static final String register			= "/manager/UserServlet";
+			public static final String forgotten		= "/manager/UserServlet";
+			public static final String movieList		= "/manager/MovieServlet";
+			public static final String cinemaList		= "/manager/CinemaServlet";
+			public static final String payOrder			= "/manager/BuyTicketServlet";
+			public static final String movieComments	= "/manager/";
+			
 			public static final String logout			= "/index/logout";
 			public static final String faceView 		= "/image/faceView";
 			public static final String faceList 		= "/image/faceList";
-			public static final String movieList		= "/movie/movieList";
 			public static final String blogView			= "/blog/blogView";
 			public static final String blogCreate		= "/blog/blogCreate";
 			public static final String commentList		= "/comment/commentList";
 			public static final String commentCreate	= "/comment/commentCreate";
 			public static final String customerView		= "/customer/customerView";
 			public static final String customerEdit		= "/customer/customerEdit";
-			public static final String fansAdd			= "/customer/fansAdd";
-			public static final String fansDel			= "/customer/fansDel";
-			public static final String notice			= "/notify/notice";
 		}
 		
 		public static final class task {
@@ -38,15 +42,17 @@ public final class AppVariable {
 			public static final int faceView			= 1004;
 			public static final int faceList			= 1005;
 			public static final int movieList			= 1006;
-			public static final int blogView			= 1007;
-			public static final int blogCreate			= 1008;
+			public static final int payOrder			= 1007;
+			public static final int movieComments		= 1008;
+			
 			public static final int commentList			= 1009;
 			public static final int commentCreate		= 1010;
 			public static final int customerView		= 1011;
 			public static final int customerEdit		= 1012;
-			public static final int fansAdd				= 1013;
-			public static final int fansDel				= 1014;
 			public static final int notice				= 1015;
+			public static final int register            = 1016;
+			public static final int forgotten           = 1017;
+			public static final int cinemaList			= 1018;
 		}
 		
 		public static final class err {

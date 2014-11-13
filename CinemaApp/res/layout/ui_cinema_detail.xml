@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="45dip"
+        layout="@layout/ui_titlebar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="45dip"
+        android:background="@drawable/background"
+        android:isScrollContainer="true"
+        android:scrollbarAlwaysDrawVerticalTrack="true" >
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="#22ffffff"
+            android:minHeight="100dp"
+            android:text="www"
+            android:textColor="#FFFFFF" />
+
+        <ListView
+            android:id="@+id/cinema_listview1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text1"
+            android:layout_marginTop="20dip"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:background="@drawable/listview_background"
+            android:cacheColorHint="#00000000"
+            android:minHeight="100dp" >
+        </ListView>
+    </RelativeLayout>
+</merge>

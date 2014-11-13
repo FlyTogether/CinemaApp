@@ -28,7 +28,7 @@ public class BaseActivity extends FragmentActivity{
 	 */
 	protected BaseTaskPool taskPool;
 	protected boolean isShowingLoadBar = false;//标识目前是否正在显示加载
-	
+	protected BaseApp app;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +38,7 @@ public class BaseActivity extends FragmentActivity{
 		this.handler = new BaseHandler(this);
 		// init task pool
 		this.taskPool = new BaseTaskPool(this);
+		this.app = (BaseApp) this.getApplicationContext();
 	}
 	
 	@Override
@@ -146,29 +147,65 @@ public class BaseActivity extends FragmentActivity{
 		}
 	}
 	/**
-	 * 读取图片，实质为检查SD卡中是否有这图片，如果本地没有则从网络下载并存储在SD卡
+	 * 读取图片，实质为检查SD卡中是否有这图片，如果本地没有则从网络下载并存储在SD卡,此方法执行完肯定有图片（尽量确保）
 	 * @param url
 	 */
 	public void loadImage (final String url) {
-		System.out.println("loadImage(?)");
 		taskPool.addTask(0, new BaseTask(){
 			@Override
 			public void onComplete(){
-				Bitmap bit = AppCache.getCachedImage(getContext(), url);
-				System.out.println("loadImage(?)'s bitmap: "+bit);
-				sendMessage(BaseTask.LOAD_IMAGE);
+				Bitmap bit = AppCache.getImage(url);
+				if(bit == null){
+					
+					new Thread(new Runnable(){
+						@Override
+						public void run() {
+							Bitmap bit = AppCache.getRemoteImage(getContext(), url);
+							System.out.println("刚从网络下载的图片 bitmap: "+bit);
+							try{
+								while(/*AppCache.getImage(url)*/bit == null){
+									Thread.sleep(500);
+								};
+								sendMessage(BaseTask.LOAD_IMAGE);
+							}catch (InterruptedException e) {
+								System.err.println("interrupted");
+							}
+						}
+					}).start();
+				}else
+					sendMessage(BaseTask.LOAD_IMAGE);
 			}
 		}, 0);
 	}
 	
 	public void loadImage (final ImageView view, final String url){
-		System.out.println("loadImage(?,?)");
 		taskPool.addTask(0, new BaseTask(){
 			@Override
 			public void onComplete(){
-				Bitmap bit = AppCache.getCachedImage(getContext(), url);
-				System.out.println("loadImage(?, ?)'s bitmap: "+bit);
-				view.setImageBitmap(bit);
+				Bitmap bit = AppCache.getImage(url);
+				if(bit == null){
+					
+					new Thread(new Runnable(){
+						@Override
+						public void run() {
+							Bitmap cacheBit = AppCache.getRemoteImage(getContext(), url);
+							System.out.println("刚从网络下载的 cacheBit: "+cacheBit);
+							
+							try{
+								while(cacheBit != null){
+									Thread.sleep(500);
+								}
+								view.setImageBitmap(cacheBit);
+							}catch (InterruptedException e) {
+								System.err.println("interrupted");
+							}
+						}
+					}).start();
+					
+//				sendMessage(BaseTask.LOAD_IMAGE);
+				}else{
+					view.setImageBitmap(bit);
+				}
 			}
 		}, 0);
 	}
@@ -247,9 +284,8 @@ public class BaseActivity extends FragmentActivity{
 		}, 0);
 	}
 	
-
+	//将值与视图绑定在一起
 	public class BitmapViewBinder implements ViewBinder {
-		// 
 		@Override
 		public boolean setViewValue(View view, Object data, String textRepresentation) {
 			if ((view instanceof ImageView) & (data instanceof Bitmap)) {
